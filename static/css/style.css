@@ -1,0 +1,36 @@
+h1{
+    color: red;
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-container {
+    margin-top: 20px;
+}
+
+/* Asegura que el contenedor principal ocupe todo el espacio disponible */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* El contenido principal debe ocupar el espacio restante */
+.main {
+    flex: 1;
+}
+
+/* Estilo para el pie de página */
+.footer {
+    background-color: #8a0000;
+    color: #d40000;
+    padding: 20px 0;
+}

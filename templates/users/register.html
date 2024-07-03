@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Registro</h2>
+                    <form method="post"> 
+                        {% csrf_token %}
+                        {% for campo in form %}
+                        <div class="form-group mt-3">
+                            {{ campo.label_tag }}
+                            {{ campo }}
+                            {% if campo.errors %}
+                            <div class="text-danger">
+                                {{ campo.errors }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-block">Registrar</button>
+                        </div>
+                    </form>
+                    <br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', serif, sans-serif;
+    }
+
+    .container {
+        max-width: 500px;
+    }
+
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    .btn-block {
+        width: 100%;
+    }
+    
+    .footer {
+        position: bottom;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: left;
+    }
+</style>
+{% endblock %}

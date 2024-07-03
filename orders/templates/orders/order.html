@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+    {% include 'orders/snippets/breadcrumb.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="h3 mb-4">
+                Revisa tu pedido
+            </div>
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    {% for product in cart.products.all %}
+                        {% include 'orders/snippets/product.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            {% include 'orders/snippets/resume.html' %}
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', serif, sans-serif;
+    }
+
+    .container {
+        max-width: 900px;
+    }
+
+    .card {
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .h3 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+</style>
+{% endblock %}
