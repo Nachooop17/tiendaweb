@@ -22,6 +22,7 @@
           <span class="fas fa-cart-plus"></span>
           Mi Carrito
       </a>
+      <a href="{% url 'admin:index' %}" class="btn btn-primary">Administrador</a>
             
     {% else %}
             <a class="nav-item nav-link {% if request.path == login %}active{% endif %}"" href="{{ login }}">
